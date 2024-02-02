@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação</title>
+    <link rel="icon" href="/public/images/logo.png" type="image/x-icon">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+
+
+<body>
+    <header>
+        <div class="box">
+            <div class="rectangle">
+                <a href="index.html">
+                    <button class="corner-button">
+                        <i class="lni lni-arrow-left custom-icon"></i>
+                    </button>
+                </a>
+                <div class="logo-1">
+                    <img src="/public/images/logo_apae.png" alt="Logo APAE" height="100rem">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="opcoes-pagamento" id="opcoes-pagamento-id">
+        <div class="titulo-pagamento">
+            Escolha a forma de doar
+        </div>
+        <div class="alignment">
+            <label>
+                <input type="radio" name="forma-doacao" value="pix"> PIX
+            </label>
+        </div>
+        <div class="alignment">
+            <label>
+                <input type="radio" name="forma-doacao" value="outras"> Outras formas
+            </label>
+        </div>
+    </section>
+
+    <!-- divs pra exibir quando selecionar -->
+    <!-- pix -->
+    <div class="qrcode" id="qrcode" style="display: none">
+        <form action="#" style="display: block; height: auto;">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="number" name="valor" placeholder="Valor a doar" min="0" step=".01" required>
+            <button type="submit">Gerar QRCode</button>
+        </form>
+    </div>
+
+    <!-- outras formas -->
+    <div id="link-pagseguro" style="display:none">
+        <p>
+            Clique aqui para efetuar a doação:
+        </p>
+        <u style="color:blue;"><a href="https://pag.ae/7Zr5L2DxK" target="_blank"
+                style="font-size: x-large; font-weight: bold; color:blue; ">Doar de outras formas</a></u>
+    </div>
+
+    <!-- rodape -->
+    <div>
+        <div class="box">
+            <div class="base">
+                <div class="rodap">
+                    <div class="logo">
+                        <img src="/public/images/logo_apae.png" alt="Logo APAE" height="100rem">
+                    </div>
+                    <div class="redes-sociais">
+                        <a href="https://br.linkedin.com/company/apae-s%C3%A3o-caetano-do-sul" target="_blank">
+                            <img class="image" src="/public/images/linkedin.png" alt="linkedin" />
+                        </a>
+                        <a href="https://www.instagram.com/apaesaocaetano/" target="_blank">
+                            <img class="img" src="/public/images/instagram.png" alt="Instagram" />
+                        </a>
+                        <a href="https://www.facebook.com/ApaeSaoCaetano" target="_blank">
+                            <img class="image-2" src="/public/images/facebook.png" alt="Facebook" />
+                        </a>
+                        <a href="https://www.youtube.com/c/apaesaocaetanodosul" target="_blank">
+                            <img class="image-3" src="/public/images/youtube.png" alt="Youtube" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="customPopup" class="custom-popup">
+        <div class="custom-popup-content">
+            <span class="custom-popup-close">&times;</span>
+            <p id="customPopupMessage">Email já registrado!</p>
+        </div>
+    </div>
+
+    <!--Div do qrcode-->
+    <div class="qrcode_certo" id="div_qrcode" style="display: none">
+        <h2>Escaneie o QR CODE</h2>
+        <img class="image" src="/public/images/qrcode.png" id="qrcodeimg" alt="qrcode"/>
+        <button type="button" id="btnSucesso">Clique para prosseguir</button>
+    </div>
+
+    <!-- Div para informar que a doação foi um sucesso -->
+    <div class="sucesso" id="div_sucesso_doacao" style="display: none">
+        <h2>A doação foi feita com sucesso!</h2>
+        <p>Muito Obrigado por fazer essa doação! Até a próxima.</p>
+        <button type="button" id="btnVoltarHome">Pagina inicial</button>
+    </div>
+
+    <script src="/public/js/botoesDoacao.js"></script>
+</body>
+
+</html>

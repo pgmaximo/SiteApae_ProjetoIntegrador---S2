@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela Recuperação de Senha</title>
+  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+  <link rel="icon" href="/public/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="box">
+      <div class="rectangle">
+        <a href="index.html">
+          <button class="corner-button">
+            <i class="lni lni-arrow-left custom-icon"></i>
+          </button>
+        </a>
+        <div class="logo-1">
+          <img src="/public/images/logo_apae.png" alt="Logo APAE" height="100rem">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Div para o input do EMAIL do usuário -->
+  <div class="esqueceu-enviar-email" id="div_email_esqueceu_senha" style="display: block">
+    <div class="esqueceu-senha">
+      <h2>Esqueceu sua senha?</h2>
+      <p>Informe o e-mail associado à sua conta para receber o código de verificação.</p>
+      <form action="#" id="emailForm">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <!-- <button type="submit">Enviar</button> -->
+        <button type="button" onclick="enviarEmail()">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Div para o input do código enviado para o usuário pelo e-mail -->
+  <div class="esqueceu-senha-auth" id="div_auth_code" style="display: none">
+    <h2>Insira o código enviado para o seu e-mail!</h2>
+    <p>Informe o código que foi enviado para o e-mail digitado anteriormente.</p>
+    <form action="#" id="authCodeForm">
+      <label for="codigo">Código:</label>
+      <input type="text" id="auth_code" name="auth_code" required>
+      <!-- <button type="submit">Enviar</button> -->
+      <button type="button" onclick="verificarCodigo()">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Div para o input da nova senha do usuário -->
+  <div class="esqueceu-senha-atualizar" id="div_atualizar_senha" style="display: none">
+    <h2>Troque sua senha!</h2>
+    <p>Confirme seu e-mail e informe a sua nova senha!</p>
+    <form action="#" id="atualizarSenhaForm">
+      <label for="usuario">Confirme seu e-mail:</label>
+      <input type="text" id="confirmaUsuario" name="confirmaUsuario" required>
+      <label for="novaSenha">Nova Senha:</label>
+      <input type="password" id="novaSenha" name="novaSenha" required>
+      <!-- <button type="submit">Redefinir Senha</button> -->
+      <button type="button" onclick="atualizarSenha()">Redefinir Senha</button>
+    </form>
+  </div>
+
+  <!-- Div para informar que a alteração de senha foi um sucesso -->
+  <div class="esqueceu-senha" id="div_sucesso_senha" style="display: none">
+    <h2>A troca de senha foi um sucesso!</h2>
+    <p>Espero que tenha te ajudado! Volte para a página principal e faça login com sua nova senha.</p>
+    <button type="button" id="btnVoltarHome" onclick="voltarParaHome()">Pagina inicial</button>
+  </div>
+
+  <!-- rodape -->
+  <div>
+    <div class="box">
+      <div class="base">
+        <div class="rodap">
+          <div class="logo">
+            <img src="/public/images/logo_apae.png" alt="Logo APAE" height="100rem">
+          </div>
+          <div class="redes-sociais">
+            <a href="https://br.linkedin.com/company/apae-s%C3%A3o-caetano-do-sul" target="_blank">
+              <img class="image" src="/public/images/linkedin.png" alt="linkedin" />
+            </a>
+            <a href="https://www.instagram.com/apaesaocaetano/" target="_blank">
+              <img class="img" src="/public/images/instagram.png" alt="Instagram" />
+            </a>
+            <a href="https://www.facebook.com/ApaeSaoCaetano" target="_blank">
+              <img class="image-2" src="/public/images/facebook.png" alt="Facebook" />
+            </a>
+            <a href="https://www.youtube.com/c/apaesaocaetanodosul" target="_blank">
+              <img class="image-3" src="/public/images/youtube.png" alt="Youtube" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="customPopup" class="custom-popup">
+    <div class="custom-popup-content">
+      <span class="custom-popup-close">&times;</span>
+      <p id="customPopupMessage">Email já registrado!</p>
+    </div>
+  </div>
+
+  <script src="/public/js/esqueceuSenha.js"></script>
+</body>
+
+</html>
